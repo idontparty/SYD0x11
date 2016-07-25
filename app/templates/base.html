@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/secretStyle.css">
+    <title>{% block title %}{% endblock %} - 1337h4x0r.xyz</title>
+    {% endblock %}
+  </head>
+  <body>
+    <div class="container">
+    <div class="jumbotron">
+      <h1>1337h4x0r.xyz</h1>
+      {% block pageTitle %}{% endblock %}
+    </div>
+    
+    <div id="navbar">
+      <ul class="nav nav-pills">
+        {% if currPage == "home" %}
+          <li role="presentation" class="active">
+            <a href="/">Home</a>
+          </li>
+        {% else %} 
+          <li role="presentation"><a href="/">Home</a></li>
+        {% endif %}
+
+
+        {% if currPage == "restricted" %}
+          <li role="presentation" class="active">
+            <a href="/restricted">Restricted</a>
+          </li>
+        {% else %} 
+          <li role="presentation"><a href="/restricted">Restricted</a></li>
+        {% endif %}
+
+        {% if currPage == "businessexcellence" %}
+          <li role="presentation" class="active">
+            <a href="/businessexcellence">Business Excellence</a>
+          </li>
+        {% else %} 
+          <li role="presentation"><a href="/businessexcellence">Business Excellence</a></li>
+        {% endif %}
+  
+        {% if loggedIn %}
+          <li role="presentation"><a href="/logout">Log out</a></li>
+        {% else %}
+          {% if currPage == "login" %}
+            <li role="presentation" class="active">
+              <a href="/login">Log in</a>
+            </li>
+          {% else %}
+            <li role="presentation"><a href="/login">Log in</a></li>
+          {% endif %}
+
+          
+        {% endif %}
+      </ul>
+    </div>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div class="panel panel-footer">
+      {% block footer %}
+        1337h4x0r.xyz challz @ 2016
+      {% endblock %}
+    </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Log in{% endblock %}
+
+{% block pageTitle %}
+  <h3>Log in</h3>
+{% endblock %}
+
+{% block content %}
+  <h4>Log in here!</h4>
+  {% if error %}
+    <h5 style="color: red;">{{ error }}</h5>
+  {% endif %}
+  <p>
+    <form action="/login" method="post">
+      Username: <input type="text" name="username"
+      placeholder="username">
+      Password: <input type="password" name="password"
+      placeholder="password">
+      <input type="submit" value="Log in">
+    </form>
+  </p>
+{% endblock %}

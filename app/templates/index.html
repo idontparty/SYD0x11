@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .hiddenz {color: white; background-color: white;}
+  </style>
+{% endblock %}
+
+{% block pageTitle %}
+  <h3>Home</h3>
+{% endblock %}
+
+{% block content %}
+  {% if error %}
+  <h4 style="color: red;">{{ error }}</h4>
+  {% endif %}
+  <p>
+    All flags have an assigned value. All flags are in the format
+    "flag{...}". The flags are case sensitive.There are several challenges on this site: 
+  <ul>
+    <li>Business Excellence - 50pt</li>
+    <li>B&E - 30pt</li>
+    <li>TOP_SECRET - 20pt</li>
+    <li class="hiddenz">Stylish - 5pt</li>
+    <li class="hiddenz">Obvious - 5pt - flag{too_obvious_flag}</li>
+  </ul>
+  </p>
+{% endblock %}
+
