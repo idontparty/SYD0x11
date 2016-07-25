@@ -20,7 +20,7 @@ def index(loggedIn=False):
         # not logged in
         insecureCookie = base64.b64encode(crazyEncrypt(
             "This is the credentials pinkFoxOnStereoids:hunter2"))
-        print insecureCookie
+        # print insecureCookie
         resp = make_response(render_template('index.html', 
             loggedIn=False, currPage="home"))
         resp.set_cookie('security_feature', insecureCookie)
